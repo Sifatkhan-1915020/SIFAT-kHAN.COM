@@ -1,0 +1,103 @@
+<html>
+ <head>
+
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js" integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/fontawesome.min.js" integrity="sha512-pafh0hrrT9ZPZl/jx0cwyp7N2+ozgQf+YK94jSupHHLD2lcEYTLxEju4mW/2sbn4qFEfxJGZyIX/yJiQvgglpw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="main1.css"/>
+<script type="text/javascript" src="main.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+ </head>
+
+ <body>
+
+ 	<div id="MyClockDisplay" class="clk" onload="showTime()"> </br></div>
+ 	<div id="MyClockDisplay1" class="clk" onload="showTime()"></div>
+   <center> 
+   	  <h2>
+   	  	 Hey..I am Sifat.</br>A Bangladeshi,Kuetian</br> Learner & Dreamer.
+   	  </h2>
+   </center>
+
+  /*button*/
+<a href="https://www.youtube.com/watch?v=VBKD5q7ohG4" id="buton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="font-family: consolas;">CLICK HERE </a>
+
+<footer>
+   <ul>
+
+     <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+     <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+     <li><a href="#"><i class="fas fa-envelope-square fa-2x"></i></a></li>
+ 
+ 
+     </ul>
+
+	</footer>
+
+<script type="text/javascript">
+function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    var wish  ="Good Morning";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h >= 12){
+      
+        session = "PM";
+    }
+
+    if(h>12)
+    {
+    	h=h-12;
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    if(h>=12)
+    {
+    	wish="Good Noon";
+    }
+    if(h-12>=4&&h-12<=7)
+    {
+    	wish="Good Afternoon";
+    }
+    if(h-12>7)
+    {
+    	wish="Good Evening";
+    }
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay1").innerText = wish;
+    
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
+</script>
+
+ </body>
+
+ </html>
